@@ -98,9 +98,8 @@ function hienthikach() {
   let tk = document.querySelector(".taikhoan");
   var obj = JSON.parse(localStorage.getItem("user"));
   if (!obj) {
-    document.querySelector("#khach").innerText = "moi ban dang nhạp ";
+    document.querySelector("#khach").innerText = "Sign In";
   } else {
-    document.querySelector(".login").style.display = "none";
     document.querySelector("#khach").innerText = obj.namekhach;
   }
 }

@@ -215,51 +215,124 @@
       </div>
 
       <div class="search">
-        <div id="search-box">
-          <input
-            placeholder="Type to search..."
-            required=""
-            class="input"
-            id="searh"
-            name="text"
-            type="text"
-          />
-          <div class="icon">
-            <svg
-              viewBox="0 0 512 512"
-              class="ionicon"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <title>Search</title>
-              <path
-                stroke-width="32"
-                stroke-miterlimit="10"
-                stroke="currentColor"
-                fill="none"
-                d="M221.09 64a157.09 157.09 0 10157.09 157.09A157.1 157.1 0 00221.09 64z"
-              ></path>
-              <path
-                d="M338.29 338.29L448 448"
-                stroke-width="32"
-                stroke-miterlimit="10"
-                stroke-linecap="round"
-                stroke="currentColor"
-                fill="none"
-              ></path>
-            </svg>
+        <div class="search-all">
+          <div id="search-box">
+            <input
+              placeholder="Type to search..."
+              required=""
+              class="input"
+              id="searh"
+              name="text"
+              type="text"
+            />
+            <div class="icon">
+              <svg
+                viewBox="0 0 512 512"
+                class="ionicon"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <title>Search</title>
+                <path
+                  stroke-width="32"
+                  stroke-miterlimit="10"
+                  stroke="currentColor"
+                  fill="none"
+                  d="M221.09 64a157.09 157.09 0 10157.09 157.09A157.1 157.1 0 00221.09 64z"
+                ></path>
+                <path
+                  d="M338.29 338.29L448 448"
+                  stroke-width="32"
+                  stroke-miterlimit="10"
+                  stroke-linecap="round"
+                  stroke="currentColor"
+                  fill="none"
+                ></path>
+              </svg>
+            </div>
+          </div>
+          <div class="product-search">
+            <div class="Cart-search">
+              <div class="cart-item cart-columm">
+                <img src="/acseet/img/shoes1.png" alt="" class="Cart-img" />
+              </div>
+              <span class="Cart-infor">Nike Court Vision Low Next Nature</span>
+              <span class="cart-price price-product cart-column">63.97$</span>
+            </div>
+            <div class="Cart-search">
+              <div class="cart-item cart-columm">
+                <img src="/acseet/img/shoes2.png" alt="" class="Cart-img" />
+              </div>
+              <span class="Cart-infor">Nike Air Force 1 '07</span>
+              <span class="cart-price price-product cart-column">65.99$</span>
+            </div>
+            <div class="Cart-search">
+              <div class="cart-item cart-columm">
+                <img src="/acseet/img/shoes3.png" alt="" class="Cart-img" />
+              </div>
+              <span class="Cart-infor">Nike max97</span>
+              <span class="cart-price price-product cart-column">112.97$</span>
+            </div>
+            <div class="Cart-search">
+              <div class="cart-item cart-columm">
+                <img src="/acseet/img/shoes4.png" alt="" class="Cart-img" />
+              </div>
+              <span class="Cart-infor">Jodan</span>
+              <span class="cart-price price-product cart-column">200$</span>
+            </div>
+            <div class="Cart-search">
+              <div class="cart-item cart-columm">
+                <img
+                  src="/acseet/img/imgproduct/nikecount/subperrtar.png"
+                  alt=""
+                  class="Cart-img"
+                />
+              </div>
+              <span class="Cart-infor">adidas supperstart</span>
+              <span class="cart-price price-product cart-column">63.97$</span>
+            </div>
+            <div class="Cart-search">
+              <div class="cart-item cart-columm">
+                <img
+                  src="/acseet/img/imgproduct/nikecount/adidas.png"
+                  alt=""
+                  class="Cart-img"
+                />
+              </div>
+              <span class="Cart-infor">Nike Court Vision Low Next Nature</span>
+              <span class="cart-price price-product cart-column">63.97$</span>
+            </div>
           </div>
         </div>
+
         <div class="box">
           <i class="fa-regular fa-heart box-icon"></i>
         </div>
-        <a href="/giohang.html">
-          <div class="box">
-            <i class="fa-solid fa-cart-shopping box-icon"></i>
+
+        <div class="box" id="box-bag">
+          <a href="/giohang.html">
+            <svg
+              aria-hidden="true"
+              class="pre-nav-design-icon"
+              focusable="false"
+              viewBox="0 0 24 24"
+              role="img"
+              fill="none"
+            >
+              <path
+                stroke="currentColor"
+                stroke-width="1.5"
+                d="M8.25 8.25V6a2.25 2.25 0 012.25-2.25h3a2.25 2.25 0 110 4.5H3.75v8.25a3.75 3.75 0 003.75 3.75h9a3.75 3.75 0 003.75-3.75V8.25H17.5"
+              ></path>
+            </svg>
             <div id="so">0</div>
-          </div>
-        </a>
+          </a>
+        </div>
+
         <div class="box">
           <a href="/user.html"> <i class="fa-solid fa-user box-icon"></i></a>
+        </div>
+        <div id="menu" class="box">
+          <i class="fa-solid fa-bars"></i>
         </div>
       </div>
     </div>
@@ -516,6 +589,7 @@
     </div>
   </footer>
   <script src="/acseet/java/giohang.js"></script>
+  <script src="/acseet/java/index.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.2.0/sweetalert2.all.min.js"></script>
 </html>

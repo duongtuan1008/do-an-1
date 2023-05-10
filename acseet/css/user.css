@@ -15,7 +15,6 @@ main {
 }
 #boder {
   padding: 50px;
-  height: 1000px;
 }
 #settings {
   font-size: 24px;
@@ -149,7 +148,7 @@ main {
   position: relative;
   display: none;
 }
-.btn {
+.btn-paypal {
   width: 200px;
   margin: 12px;
   font-size: 16px;
@@ -207,7 +206,7 @@ main {
 }
 #form-account {
   position: relative;
-  /* display: none; */
+  display: none;
 }
 @keyframes upload {
   from {
@@ -226,9 +225,16 @@ main {
   margin: 20px 0px;
   display: none;
 }
+#bankcard span {
+  display: block;
+}
 .iconbank {
   font-size: 32px;
-  margin: 10px 0 0 10px;
+  margin: 16px;
+  display: flex;
+}
+.iconbank i {
+  margin: 16px;
 }
 #namebank {
   font-size: 24px;
@@ -251,7 +257,6 @@ main {
   font-weight: 550;
 }
 #namepeopel {
-  font-family: Georgia, "Times New Roman", Times, serif;
   font-size: 16px;
 }
 .xanh {

@@ -7,7 +7,7 @@ html {
   font-family: Arial, Helvetica, sans-serif;
 }
 :root {
-  --heightheader: 50px;
+  --heightheader: 70px;
   --transition--effect: 0.4s, left 0.3s cubic-bezier(0.18, 0.89, 0.35, 1.15);
   --size-button: 30px;
 }
@@ -98,11 +98,11 @@ a {
   justify-content: end;
   flex-wrap: nowrap;
   overflow: hidden;
+  height: 100%;
 }
 #search-box {
   display: flex;
   max-height: 100px;
-  height: 100%;
   border: solid 2px;
   position: relative;
   border-radius: 30px;
@@ -225,20 +225,23 @@ a {
   color: #4d4c4c;
   cursor: pointer;
 }
+#box-bag {
+  padding: 0px;
+}
 .box-icon {
   font-size: 24px;
   text-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
 }
-.box:hover {
-  border: hidden 1px;
-  background-color: rgba(0, 0, 0, 0.3);
-  border-radius: 50%;
-  color: #fff;
-}
+
 #boder {
   /* margin: 0px 0 0 0;
   height: 2600px; */
   height: 100%;
+}
+.main-banner {
+  display: block;
+  position: relative;
+  z-index: 0;
 }
 #slider {
   width: 100%;
@@ -478,6 +481,7 @@ a {
   transition: 2s;
 }
 #pick {
+  color: #000;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -826,6 +830,11 @@ p.gia {
 .shops {
   position: relative;
 }
+.pre-nav-design-icon {
+  color: #111;
+  width: 30px;
+  height: 30px;
+}
 #so {
   position: absolute;
   color: red;
@@ -835,14 +844,14 @@ p.gia {
   padding: 0 0.4125rem;
   text-align: center;
   height: 1rem;
-  border: 0.125rem solid var(--brand-primary-color, #606060);
+
   color: var(--brand-primary-color, #606060);
-  background-color: #fff;
+  background-color: transparent;
   font-size: 12px;
-  top: 10px;
-  right: 53px;
+  top: 29.5px;
+  right: 67px;
   margin-right: -0.875rem;
-  animation: bell 0.5s linear infinite;
+  /* animation: bell 0.5s linear infinite; */
 }
 .fancy {
   background-color: transparent;
@@ -1064,9 +1073,12 @@ p.gia {
   max-width: 400px;
   width: 100%;
   right: 0px;
-  top: 47px;
+  top: 37px;
   margin: 10px;
-  background-color: #ccc;
+  background-image: linear-gradient(#fff, #ccc);
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+    rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
   display: none;
@@ -1079,7 +1091,7 @@ p.gia {
   background-color: transparent;
   width: 0;
   height: 0;
-  border-bottom: 10px solid #ccc;
+  border-bottom: 10px solid #ffffff;
   text-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
   border-left: 20px solid transparent;
   border-right: 20px solid transparent;
@@ -1635,6 +1647,14 @@ button.Cart-xoa:active {
     transform: translateX(-100%);
   }
 }
+@keyframes localbtn {
+  from {
+    transform: translateX(100px);
+  }
+  to {
+    transform: translateX(0px);
+  }
+}
 
 .product-search {
   width: 100%;
@@ -1681,7 +1701,29 @@ button.Cart-xoa:active {
     font-size: 16px;
   }
   #search-box {
-    display: none;
+    font-size: 12px;
+  }
+  .input:focus,
+  .input:not(:invalid) {
+    position: sticky;
+    right: 0;
+    left: 0;
+    width: 100%;
+    cursor: text;
+
+    box-shadow: 0px 0px 0px #0e0e0e, 0px 0px 0px rgb(95 94 94 / 25%),
+      inset 1.5px 1.5px 3px #0e0e0e, inset -1.5px -1.5px 3px #5f5e5e;
+  }
+  .product-search {
+    z-index: 2;
+    width: 100%;
+    max-width: 100%;
+    right: 0px;
+    background-image: linear-gradient(#fff, #ccc);
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+      rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+    border-radius: 0 0 10px 10px;
+    margin: 10px 0px;
   }
   .taikhoan {
     margin-top: 10px;
@@ -1700,9 +1742,7 @@ button.Cart-xoa:active {
     padding: 8px;
     margin: 2px 5px;
   }
-  #search-box {
-    display: none;
-  }
+
   #subnav {
     display: block;
     clear: both;
@@ -1770,24 +1810,30 @@ button.Cart-xoa:active {
     border-radius: 0 0 10px 10px;
     width: 120px;
     height: 200px;
-    right: 10px;
+    right: 0.5px;
     z-index: 2;
     box-shadow: 0 10px 10px rgba(0, 0, 0, 0.3);
     animation-name: local;
     animation-duration: 0.5s;
     animation-iteration-count: 1;
     display: none;
+    z-index: 1;
   }
+
   .local-band button {
     position: relative;
     width: 100px;
     margin: 5px;
     border-radius: 20px;
+    animation-name: localbtn;
+    animation-duration: 0.5s;
+    animation-iteration-count: 1;
     border: none;
   }
   .local-band button:focus {
     box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.3);
   }
+
   #allsp {
     margin: 10px;
     clear: both;
@@ -1840,10 +1886,25 @@ button.Cart-xoa:active {
     width: 100%;
     margin-bottom: 10px;
   }
+  .pre-nav-design-icon {
+    color: #111;
+    width: 24px;
+    height: 24px;
+  }
   #so {
-    top: 8px;
-    right: 95px;
+    border: 0.125rem solid var(--brand-primary-color, #606060);
+    background-color: #fff;
+    top: 7px;
+    font-size: 12px;
+    width: 18px;
+    right: 51px;
     padding: 0 0.1125rem;
+  }
+  .box-user {
+    display: none;
+  }
+  .while {
+    float: left;
   }
   #map {
     width: 90%;
@@ -1870,5 +1931,14 @@ button.Cart-xoa:active {
     width: 250px;
     height: 300px;
     margin-bottom: 32px;
+  }
+  .local .search-box {
+    display: block;
+  }
+  #header {
+    min-height: 60px;
+  }
+  #logo img {
+    height: 60px;
   }
 }

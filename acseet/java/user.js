@@ -13,11 +13,11 @@ Closepay.addEventListener("click", function () {
   bankcard.style.display = "none";
 });
 var payform = document.getElementById("pay");
-const btnpay = document.querySelector(".btn");
+const btnpay = document.querySelector(".btn-paypal");
 btnpay.addEventListener("click", () => {
   payform.style.display = "flex";
 });
-var addpay = document.querySelector(".btn");
+var addpay = document.querySelector(".btn-paypal");
 // var Save = document.querySelector("#btn-pay");
 // Save.addEventListener("click", function () {
 
@@ -103,21 +103,21 @@ function renderbank() {
   let listbank = localStorage.getItem("listbank")
     ? JSON.parse(localStorage.getItem("listbank"))
     : [];
-  let bank =
-    "<tr><><th>+${Name}</th><th>banknumber</th><th>datebank</th><th>namepeopel</th></tr>";
-  listbank.map((value, index) => {
-    bank +=
-      "<tr><td>" +
-      value.number +
-      "</td><td>" +
-      value.Name +
-      "</td><><td>" +
-      value.Datebank +
-      "</td><td>" +
-      value.People +
-      "</td></tr>";
-  });
-  document.getElementById("table").innerHTML = bank;
+  // let bank =
+  //   "<tr><><th>+${Name}</th><th>banknumber</th><th>datebank</th><th>namepeopel</th></tr>";
+  // listbank.map((value, index) => {
+  //   bank +=
+  //     "<tr><td>" +
+  //     value.number +
+  //     "</td><td>" +
+  //     value.Name +
+  //     "</td><><td>" +
+  //     value.Datebank +
+  //     "</td><td>" +
+  //     value.People +
+  //     "</td></tr>";
+  // });
+  // document.getElementById("table").innerHTML = bank;
 }
 
 //////////////////////////////////////////////////////////////////
