@@ -365,7 +365,6 @@ a {
   overflow: hidden;
   box-shadow: 0 10px 10px rgba(0, 0, 0, 0.3);
   top: var(--heightheader);
-  margin-top: 10px;
   border-radius: 0 0 10px 10px;
   transform: scale(0), translateY(0);
   transition: 0.5s;
@@ -1073,7 +1072,7 @@ p.gia {
   max-width: 400px;
   width: 100%;
   right: 0px;
-  top: 37px;
+  top: 45px;
   margin: 10px;
   background-image: linear-gradient(#fff, #ccc);
   box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
@@ -1664,7 +1663,7 @@ button.Cart-xoa:active {
   right: 124px;
   top: 47px;
   margin: 10px;
-  background-color: #d9d5d5;
+  background-image: linear-gradient(#fff,#ccc);
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
   display: none;

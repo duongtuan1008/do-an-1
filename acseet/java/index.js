@@ -58,30 +58,39 @@ btnbuy.forEach((buy) => {
     // console.log(buy);
     var produc = buybtn.parentElement;
     console.log(produc);
-    let namesp = produc.querySelector(".name-sp").textContent;
+    let namespr = produc.querySelector(".name-sp").textContent;
     let thongtin = produc.querySelector(".thongtinsp").textContent;
     let gia = produc.querySelector(".gia").textContent;
     const anh = produc.querySelector(".imgsp");
     const image = anh.getAttribute("src");
     let sizegg = produc.querySelector(".sizegg").value;
-
+    var soluong = 1;
     let list = localStorage.getItem("list")
       ? JSON.parse(localStorage.getItem("list"))
       : [];
-    swal(
-      "successful",
-      "successful payment!",
-      "success"
-    );
-    list.push({
-      image: image,
-      namesp: namesp,
-      thongtin: thongtin,
-      gia: gia,
-      sizeone: sizegg,
-    });
+    console.log(list);
+    var flag = false;
 
+    for (let i = 0; i < list.length; i++) {
+      if (list[i].namesp == namespr) {
+        var cout = list[i].soluong++;
+        flag = true;
+        break;
+      }
+    }
+    if (flag == false) {
+      list.push({
+        image: image,
+        namesp: namespr,
+        thongtin: thongtin,
+        gia: gia,
+        sizeone: sizegg,
+        soluong: soluong,
+      });
+    }
     localStorage.setItem("list", JSON.stringify(list));
+
+    swal("successful", "successful payment!", "success");
     document.querySelector("#so").innerText = list.length;
     ree();
     hienthikach();
@@ -113,6 +122,20 @@ const fade = () => {
 window.addEventListener("load", fade);
 
 ////////////////////////////////////////
+function update() {
+  let list = localStorage.getItem("list")
+    ? JSON.parse(localStorage.getItem("list"))
+    : [];
+  // for (let i = 0; i < list.length; i++) {
+  //   for (let j = i; j < list.length; i++) {
+  //     if (list[i] === list[j]) {
+  //       console.log(i);
+  //       console.log(j);
+  //     }
+  //   }
+  // }
+}
+///////////////////////////////////////
 function ree() {
   let list = localStorage.getItem("list")
     ? JSON.parse(localStorage.getItem("list"))
@@ -130,7 +153,9 @@ function ree() {
         value.sizeone +
         '</span></div><span class="cart-price price-product cart-column">' +
         value.gia +
-        '</span><div class="cart-quantity cart-quantity-ca cart-column"><input class="ipsl" onchange="sum()" style="width: 50%;text-align: center;line-height: 30px;border-radius: 5px;border: 1px solid #56ccf2;background-color: #eee;color: #333;padding-left: 5px;"id="q2_1"onchange="updateQuantity2(1)"type="number"value="1" min="1"/><button class="Cart-xoa" onclick="xoa(' +
+        '</span><div class="cart-quantity cart-quantity-ca cart-column"><input class="ipsl" onchange="sum()" style="width: 50%;text-align: center;line-height: 30px;border-radius: 5px;border: 1px solid #56ccf2;background-color: #eee;color: #333;padding-left: 5px;"id="q2_1"onchange="updateQuantity2(1)"type="number"value="' +
+        value.soluong +
+        '" min="1"/><button class="Cart-xoa" onclick="xoa(' +
         index +
         ')" type="button">Xóa</button></div></div>';
     });

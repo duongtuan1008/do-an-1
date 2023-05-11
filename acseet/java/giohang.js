@@ -15,7 +15,9 @@ function ree() {
       value.sizeone +
       '</span></div><span class=" price-product cart-column">$<p class="cart-price">' +
       value.gia +
-      '</p></span><div class="cart-quantity cart-quantity-ca cart-column"><input class="ipsl" onchange="sum()" style="width: 30%;text-align: center;line-height: 30px;border-radius: 5px;border: 1px solid #56ccf2;background-color: #eee;color: #333;padding-left: 5px;"id="q2_1"onchange="updateQuantity2(1)"type="number"value="1" min="1"/><button class="Cart-xoa" onclick="xoa(' +
+      '</p></span><div class="cart-quantity cart-quantity-ca cart-column"><input class="ipsl" onchange="sum()" style="width: 30%;text-align: center;line-height: 30px;border-radius: 5px;border: 1px solid #56ccf2;background-color: #eee;color: #333;padding-left: 5px;"id="q2_1"onchange="updateQuantity2(1)"type="number"value="' +
+      value.soluong +
+      '" min="1"/><button class="Cart-xoa" onclick="xoa(' +
       index +
       ')" type="button"><i class="fa-regular fa-trash-can"></i></button></div></div>';
     // console.log(value.gia);
@@ -55,7 +57,9 @@ function tiket() {
       value.thongtin +
       '</p></span><span style="color: rgb(117, 117, 117)" class="tiket-price">price:<p>' +
       value.gia +
-      "</p>$</span></div></div></div>";
+      '</p>$</span><span style="color: rgb(117, 117, 117)" class="tiket-price">quantily:<p>' +
+      value.soluong +
+      "</p></span></div></div></div>";
   });
   document.querySelector(".over-tiket").innerHTML = spltiket;
 }
@@ -248,6 +252,7 @@ document.getElementById("paying").addEventListener("click", function () {
       if (result.value) {
         window.location.href = "../index.html";
         localStorage.removeItem("list");
+        sumtiket();
       } else if (result.dismiss === "cancel") {
         swal("Cancelled", "Your stay here :)", "error");
       }
@@ -273,3 +278,16 @@ function hienthikach() {
   }
 }
 document.addEventListener("DOMContentLoaded", hienthikach());
+//////////////////////////////////////////////////////////////
+var quanitlyinput = document.querySelectorAll(".ipsl");
+quanitlyinput.forEach((cout, index) => {
+  let list = localStorage.getItem("list")
+    ? JSON.parse(localStorage.getItem("list"))
+    : [];
+  cout.addEventListener("input", (event) => {
+    var ipsl = event.target.value;
+    console.log(ipsl);
+    list[index].soluong = parseInt(ipsl);
+    localStorage.setItem("list", JSON.stringify(list));
+  });
+});
